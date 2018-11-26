@@ -9,9 +9,9 @@ class Pokemon
     @db = db
   end
 
-  def self.save(name, type, hp, db)
+  def self.save(name, type, db)
     #binding.pry
-    db.execute("INSERT INTO pokemon (name, type, hp) VALUES (?, ?, ?)", name, type, hp)
+    db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)", name, type)
   end
   
   def self.find(id, db)
